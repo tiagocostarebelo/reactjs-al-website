@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Button = ({ btnText, href, onClick }) => {
-    const baseClasses = "inline-block px-6 py-1 rounded-md font-semibold text-background bg-primary hover:bg-secondary transition";
+    const baseClasses = "inline-block px-6 py-1 rounded-md font-semibold text-background font-heading bg-primary hover:bg-secondary transition";
 
     if (href) {
         return (

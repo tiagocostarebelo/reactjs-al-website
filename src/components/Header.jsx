@@ -1,25 +1,33 @@
 import React from 'react'
 import Button from './Button';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
 const Header = () => {
+    const baseClasses = 'transition hover:text-primary';
+    const activeClasses = 'text-primary font-semibold';
+
     return (
-        <>
-            <h1 className="text-center font-bold text-3xl pt-6 pb-2">Anonymous Lover</h1>
-            <header className="text-center md:flex md:items-center md:justify-between px-6 py-2 md:px-8 md:py-4 space-y-4">
-                <nav className="space-x-3">
-                    <Link to="/about">About</Link>
-                    <Link to="/products">Products</Link>
-                    <Link to="/contact">Contacts</Link>
-                </nav>
+        <header className="bg-gray-600 border-b border-gray-700 shadow-md sticky top-0 z-50">
+            <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                <NavLink to="/" className="flex items-center text-lg font-bold text-primary">
+                    <span className="font-heading">Anonymous Lover</span>
+                </NavLink>
 
-                <Button btnText="Go To Shop" href="https://ebay.com" />
+                {/* Desktop nav */}
+                <div className="hidden md:flex items-center gap-6">
+                    <div className="space-x-4 text-sm text-gray-300">
+                        <NavLink className={({ isActive }) => isActive ? activeClasses : baseClasses} to="/">Home</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? activeClasses : baseClasses} to="/about">About</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? activeClasses : baseClasses} to="/products">Products</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? activeClasses : baseClasses} to="/contact">Contact</NavLink>
+                    </div>
+
+                    <Button btnText="Go To Shop" href="https://ebay.com" />
+                </div>
 
 
-
-            </header>
-
-        </>
+            </nav>
+        </header>
     )
 }
 
