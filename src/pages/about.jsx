@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutPage = () => {
     return (
-        <div>AboutPage</div>
+        <div className="absolute top-0 z-30">AboutPage</div>
     )
 }
 
